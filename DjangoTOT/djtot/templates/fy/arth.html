@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arthematic Operations</title>
+</head>
+<body>
+<input type="text" placeholder="Enter a Value" id="a">
+<input type="text" placeholder="Enter B Value" id="b">
+    <button type="button" onclick="getInputValue();">Get Value</button>
+    
+    <script>
+        function getInputValue(){
+            // Selecting the input element and get its value 
+            var aval = document.getElementById("a").value;
+            var bval = document.getElementById("b").value;
+            var c = parseInt(aval)+parseInt(bval)
+            var d = parseInt(aval)*parseInt(bval)
+            
+            // Displaying the value
+            alert("Addition of "+aval+" and "+bval+" is: "+c);
+            
+        }
+    </script>
+
+</body>
+</html>
