@@ -1,13 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Arthematic Operations</title>
 </head>
 <body>
-<input type="text" placeholder="Enter a Value" id="a">
+	<form>
+<input type="text" placeholder="Enter A Value" id="a">
 <input type="text" placeholder="Enter B Value" id="b">
     <button type="button" onclick="getInputValue();">Get Value</button>
-    
+ </form>
+ <h2>Output:</h2>
+ <h4 id="res"></h4>
     <script>
         function getInputValue(){
             // Selecting the input element and get its value 
@@ -15,12 +19,14 @@
             var bval = document.getElementById("b").value;
             var c = parseInt(aval)+parseInt(bval)
             var d = parseInt(aval)*parseInt(bval)
+            var e = parseInt(aval)-parseInt(bval)
             
             // Displaying the value
-            alert("Addition of "+aval+" and "+bval+" is: "+c);
+            /*alert("Addition of "+aval+" and "+bval+" is: "+c+"\n"+"Multiplicatopn of "+aval+" and "+bval+" is: "+d+"\n"+"Substraction of "+aval+" and "+bval+" is: "+e);*/
+            document.getElementById("res").innerText="Addition of "+aval+" and "+bval+" is: "+c+"\n"+"Multiplicatopn of "+aval+" and "+bval+" is: "+d+"\n"+"Substraction of "+aval+" and "+bval+" is: "+e
             
         }
     </script>
-
+<img src="{% static 'images/django.png' %}">
 </body>
 </html>

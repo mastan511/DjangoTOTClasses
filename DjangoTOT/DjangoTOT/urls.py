@@ -16,18 +16,23 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from djtot import views
+from djbt import views as v
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.home),
+    path('home/',views.home),
     path('ft/',views.fun),
     path('rcd/<str:name>',views.rc),
     path('table/<int:n>',views.mulTable),
     path('details/<str:name>/<int:age>',views.myDetails),
    	path('de/',views.sample),
    	path('js/',views.myJs),
-   	path('login',views.mylogin),
-   	path('reg',views.myreg),
-   	path('arthematic',views.myarthematic),
+   	path('login/',views.mylogin),
+   	path('reg/',views.myreg),
+   	path('arthematic/',views.myarthematic),
+    path('',v.home),
+    path('task/',v.bttask),
+    path('registration/',v.regtask),
+
 
 ]
