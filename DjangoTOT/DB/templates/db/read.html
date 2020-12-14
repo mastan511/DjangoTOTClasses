@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Crud operations</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container mt-4">
+		<h1>Student Data</h1>
+		<a href="{% url 'addStudent' %}" class="btn btn-primary btn-md">Add Student</a>
+		<table class="table table-bordered table-hover table-stripped bg-light">
+			<thead>
+				<tr>
+					<th>S.No</th>
+					<th>RollNo</th>
+					<th>Name</th>
+					<th>Age</th>
+					<th>Mobile</th>
+					<th>Email</th>
+					<th>Address</th>
+					<th colspan="2">Operations</th>
+				</tr>
+			</thead>>
+			<tbody>
+				{% for i in data %}
+				<tr>
+					<td>{{forloop.counter}}</td>
+					<td>{{i.rollno}}</td>
+					<td>{{i.name}}</td>
+					<td>{{i.age}}</td>
+					<td>{{i.mobileno}}</td>
+					<td>{{i.email}}</td>
+					<td>{{i.address}}</td>
+					<td>
+						<a href="{% url 'update' i.id %}" class="btn btn-outline-success">Edit</a>
+					</td>
+					<td>
+						<a href="{% url 'delete' i.id %}" class="btn btn-outline-danger">delete</a>
+					</td>
+
+				</tr>
+				{% endfor %}
+			</tbody>
+
+		</table>
+	</div>
+</body>
+</html>

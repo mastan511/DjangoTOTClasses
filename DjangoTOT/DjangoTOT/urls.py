@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from djtot import views
 from djbt import views as v
+from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,6 +34,7 @@ urlpatterns = [
     path('',v.home),
     path('task/',v.bttask),
     path('registration/',v.regtask),
-
+    path('regd/',v.regd),
+    path('DB/',include('DB.urls')),
 
 ]
